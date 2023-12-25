@@ -2723,19 +2723,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Edgar Lumbanraja\\.nuget\\packages\\": {}
+    "C:\\Users\\lawof\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Edgar Lumbanraja\\source\\repos\\API-practice\\API-practice\\API-practice.csproj",
+      "projectUniqueName": "C:\\Users\\lawof\\Source\\Repos\\learn-crud-auth-dotnet\\API-practice\\API-practice.csproj",
       "projectName": "API-practice",
-      "projectPath": "C:\\Users\\Edgar Lumbanraja\\source\\repos\\API-practice\\API-practice\\API-practice.csproj",
-      "packagesPath": "C:\\Users\\Edgar Lumbanraja\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Edgar Lumbanraja\\source\\repos\\API-practice\\API-practice\\obj\\",
+      "projectPath": "C:\\Users\\lawof\\Source\\Repos\\learn-crud-auth-dotnet\\API-practice\\API-practice.csproj",
+      "packagesPath": "C:\\Users\\lawof\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lawof\\Source\\Repos\\learn-crud-auth-dotnet\\API-practice\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Edgar Lumbanraja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lawof\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2743,6 +2743,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2797,7 +2798,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }
