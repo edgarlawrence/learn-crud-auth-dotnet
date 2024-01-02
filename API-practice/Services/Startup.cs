@@ -15,7 +15,7 @@ namespace API_practice.Services
         {
             services.AddControllers();
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<SampleDbContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
