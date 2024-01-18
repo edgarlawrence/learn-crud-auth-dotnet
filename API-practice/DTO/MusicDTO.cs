@@ -11,6 +11,8 @@ namespace API_practice.DTO
         public string Title { get; set; }
         public DateTime ReleaseDate { get; set; }
         public string Artist { get; set; }
+        public int Price { get; set; }
+        public int Quantity { get; set; }
         public int Rate { get; set; }
 
         public string GenreId { get; set; }

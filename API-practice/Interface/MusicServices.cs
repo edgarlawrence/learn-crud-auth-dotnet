@@ -54,6 +54,7 @@ namespace API_practice.Interface
                 musicDetail.Title = music.Title;
                 musicDetail.ReleaseDate = music.ReleaseDate;
                 musicDetail.Artist = music.Artist;
+                musicDetail.Price = music.Price;
                 musicDetail.Rate = music.Rate;
                 await _appDbContext.SaveChangesAsync();
             }

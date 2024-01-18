@@ -2,6 +2,7 @@
 using API_practice.Interface;
 using API_practice.Model;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_practice.Controller
@@ -20,6 +21,7 @@ namespace API_practice.Controller
 
         // add music
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Post(MusicDTO musicDTO)
         {
             // map musicDTO to music and send it to the AddMusic function 
@@ -36,6 +38,7 @@ namespace API_practice.Controller
 
         // update music
         [HttpPut]
+        [Authorize]
         public async Task<IActionResult> Put(MusicDTO musicDTO)
         {
             // map musicDTO to music and send it to the AddMusic function 
@@ -51,6 +54,7 @@ namespace API_practice.Controller
 
         // delete music
         [HttpDelete]
+        [Authorize]
         public IActionResult Delete(string id)
         {
             var result = _musicServices.DeleteMusic(id);

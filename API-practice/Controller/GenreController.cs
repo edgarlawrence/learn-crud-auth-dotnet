@@ -2,6 +2,7 @@
 using API_practice.Interface;
 using API_practice.Model;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_practice.Controller
@@ -32,6 +33,7 @@ namespace API_practice.Controller
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> PostGenre(GenreDTO genreDTO)
         {
             var results = await _genreService.AddGenre(_mapper.Map<Genre>(genreDTO));
@@ -44,6 +46,7 @@ namespace API_practice.Controller
         }
 
         [HttpPut]
+        [Authorize]
         public async Task<IActionResult> PutGenre(GenreDTO genreDTO)
         {
             var results = _genreService.EditGenre(_mapper.Map<Genre>(genreDTO));
@@ -56,6 +59,7 @@ namespace API_practice.Controller
         }
 
         [HttpDelete]
+        [Authorize]
         public IActionResult DeleteGenre(string id)
         {
             var results = _genreService.DeleteGenre(id);
