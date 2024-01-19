@@ -12,6 +12,7 @@ namespace API_practice.DTO
         public DateTime ReleaseDate { get; set; }
         public string Artist { get; set; }
         public int Rate { get; set; }
+        public decimal Price { get; set; }
 
         public string GenreId { get; set; }
     }

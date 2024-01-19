@@ -22,6 +22,27 @@ namespace API_practice.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("API_practice.Model.Cart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("MusicId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MusicId");
+
+                    b.ToTable("Cart");
+                });
+
             modelBuilder.Entity("API_practice.Model.Genre", b =>
                 {
                     b.Property<string>("Id")
@@ -48,6 +69,9 @@ namespace API_practice.Migrations
                     b.Property<string>("GenreId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Rate")
                         .HasColumnType("int");
@@ -262,6 +286,15 @@ namespace API_practice.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("API_practice.Model.Cart", b =>
+                {
+                    b.HasOne("API_practice.Model.Music", "Music")
+                        .WithMany()
+                        .HasForeignKey("MusicId");
+
+                    b.Navigation("Music");
                 });
 
             modelBuilder.Entity("API_practice.Model.Music", b =>

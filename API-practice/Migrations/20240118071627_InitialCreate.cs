@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API_practice.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -175,6 +175,7 @@ namespace API_practice.Migrations
                     ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Artist = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Rate = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     GenreId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
@@ -186,6 +187,25 @@ namespace API_practice.Migrations
                         principalTable: "Genre",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Cart",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MusicId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Quantity = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cart", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Cart_Music_MusicId",
+                        column: x => x.MusicId,
+                        principalTable: "Music",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -228,6 +248,11 @@ namespace API_practice.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Cart_MusicId",
+                table: "Cart",
+                column: "MusicId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Music_GenreId",
                 table: "Music",
                 column: "GenreId");
@@ -251,13 +276,16 @@ namespace API_practice.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Music");
+                name: "Cart");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Music");
 
             migrationBuilder.DropTable(
                 name: "Genre");
