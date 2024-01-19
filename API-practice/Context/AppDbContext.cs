@@ -25,5 +25,6 @@ namespace API_practice.Context
 
         public DbSet<Music> Music { get; set; }
         public DbSet<Genre> Genre { get; set; }
+        public DbSet<Cart> Cart { get; set; }
     }
 }

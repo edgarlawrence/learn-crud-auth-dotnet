@@ -48,6 +48,7 @@ builder.Services.AddControllers();
 /// builder.Services.AddSingleton<Startup>();
 builder.Services.AddScoped<IMusicServices, MusicServices>();
 builder.Services.AddScoped<IGenreService, GenreServices>();
+builder.Services.AddScoped<ICartService, CartServices>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
